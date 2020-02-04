@@ -20,7 +20,7 @@
 - name: Add root foward address
   lineinfile:
     dest: "/etc/aliases"
-    line: "root:    {{ postfix_root_forward_address }}"
+    line: "root: {{ postfix_root_forward_address }}"
     regexp: "^root"
   when: postfix_root_forward_address != ""
 
