@@ -1,6 +1,6 @@
 # Ansible Role: Postfix
 
-Forked from https://github.com/geerlingguy/ansible-role-postfix/ adjustments acroding to https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-postfix-as-a-send-only-smtp-server-on-ubuntu-16-04
+Forked from https://github.com/geerlingguy/ansible-role-postfix/ adjustments according to https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-postfix-as-a-send-only-smtp-server-on-ubuntu-16-04
 
 Installs postfix on RedHat/CentOS or Debian/Ubuntu.
 
