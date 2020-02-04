@@ -14,6 +14,16 @@
       value: "{{ postfix_inet_interfaces }}"
     - name: inet_protocols
       value: "{{ postfix_inet_protocols }}"
+    - name: mydestination
+      value: "{{ postfix_mydestination }}"
+
+- name: Add root foward address
+  lineinfile:
+    dest: "/etc/aliases"
+    line: "root:    {{ postfix_root_forward_address }}"
+    regexp: "^root"
+  when: postfix_root_forward_address != ""
+
   notify: restart postfix
 
 - name: Ensure postfix is started and enabled at boot.

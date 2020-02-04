@@ -1,6 +1,6 @@
 # Ansible Role: Postfix
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-postfix.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-postfix)
+Forked from https://github.com/geerlingguy/ansible-role-postfix/ adjustments acroding to https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-postfix-as-a-send-only-smtp-server-on-ubuntu-16-04
 
 Installs postfix on RedHat/CentOS or Debian/Ubuntu.
 
@@ -21,10 +21,18 @@ The path to the Postfix `main.cf` configuration file.
 
 The state in which the Postfix service should be after this role runs, and whether to enable the service on startup.
 
-    postfix_inet_interfaces: localhost
+    postfix_inet_interfaces: loopback-only
     postfix_inet_protocols: all
 
 Options for values `inet_interfaces` and `inet_protocols` in the `main.cf` file.
+
+    postfix_mydestination: $myhostname, localhost.$mydomain, $mydomain
+
+Hosts in mydestination.
+
+    postfix_root_forward_address: <YOUR EMAIL ADRESS>
+
+Email adress to forward root emails to.
 
 ## Dependencies
 
